@@ -243,7 +243,7 @@ const ShopBody = ({
 
       {products?.length !== 0 ? (
         <div dir="rtl" className="flex justify-evenly flex-wrap">
-          {productsDisplayed.map((one, index) => {
+          {productsDisplayed?.map((one, index) => {
             if (shopRoute) {
               return (
                 <DynamicProduct
