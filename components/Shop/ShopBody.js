@@ -63,7 +63,7 @@ const ShopBody = ({
     else setFirstArrow(true);
 
     // 𝗳𝗼𝗿 𝗿𝗶𝗴𝗵𝘁 𝗮𝗿𝗿𝗼𝘄
-    if (data.selected == Math.ceil(products?.length / productsPerPage) - 1)
+    if (data.selected == Math.ceil(products.length / productsPerPage) - 1)
       setLastArrow(false);
     else setLastArrow(true);
 
@@ -90,9 +90,7 @@ const ShopBody = ({
         shopIdRoute
           ? `flex flex-col`
           : `w-full ${
-              products?.length == 0
-                ? 'min-h-screen md:h-screen'
-                : 'min-h-screen'
+              products.length == 0 ? 'min-h-screen md:h-screen' : 'min-h-screen'
             } pt-[103px] px-4 md:px-8 pb-7 flex flex-col`
       }
     >
@@ -241,9 +239,9 @@ const ShopBody = ({
         </div>
       )}
 
-      {products?.length !== 0 ? (
+      {products.length !== 0 ? (
         <div dir="rtl" className="flex justify-evenly flex-wrap">
-          {productsDisplayed?.map((one, index) => {
+          {productsDisplayed.map((one, index) => {
             if (shopRoute) {
               return (
                 <DynamicProduct
@@ -292,10 +290,8 @@ const ShopBody = ({
         LastArrow={LastArrow}
         currentPage={currentPage}
         handleChange={handleChange}
-        pageCount={Math.ceil(products?.length / productsPerPage)}
+        pageCount={Math.ceil(products.length / productsPerPage)}
       />
     </div>
   );
 };
-
-export default ShopBody;
